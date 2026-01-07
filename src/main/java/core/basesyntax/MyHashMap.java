@@ -61,7 +61,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         if (table == null) {
             return null;
         }
-        int hash = key.hashCode();
+        int hash = key == null ? 0 : key.hashCode();
         int index = Math.abs(hash % table.length);
 
         Node<K, V> val = table[index];
